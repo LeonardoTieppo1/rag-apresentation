@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -40,7 +43,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            background-image: 
+            background-image:
                 radial-gradient(at 10% 10%, rgba(95, 63, 233, 0.12) 0px, transparent 50%),
                 radial-gradient(at 90% 90%, rgba(0, 229, 255, 0.08) 0px, transparent 50%);
         }
@@ -79,8 +82,15 @@
         }
 
         @keyframes slideIn {
-            from { opacity: 0; transform: scale(0.96) translateY(10px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
         /* Decorative Glow Grid */
@@ -199,7 +209,8 @@
             margin-top: 10px;
         }
 
-        .comp-table th, .comp-table td {
+        .comp-table th,
+        .comp-table td {
             padding: 12px 16px;
             text-align: left;
             border-bottom: 1px solid var(--border);
@@ -346,7 +357,7 @@
             justify-content: space-between;
             align-items: center;
             margin-top: 20px;
-            background: rgba(0,0,0,0.15);
+            background: rgba(0, 0, 0, 0.15);
             padding: 20px;
             border-radius: 14px;
             border: 1px solid var(--border);
@@ -365,7 +376,7 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border);
             display: flex;
             align-items: center;
@@ -393,17 +404,24 @@
         }
 
         .flow-arrow {
-            color: var(--border-hover, rgba(255,255,255,0.2));
+            color: var(--border-hover, rgba(255, 255, 255, 0.2));
             animation: pulseArrow 2s infinite ease-in-out;
         }
 
         @keyframes pulseArrow {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 1; }
-        }
 
+            0%,
+            100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Presentation Viewport -->
@@ -418,10 +436,13 @@
             <div class="slide-body" style="text-align: center; gap: 24px;">
                 <h1 class="slide-title" style="font-size: 3.5rem;">IA Corporativa <span>Inteligente</span> e Segura</h1>
                 <p class="slide-subtitle" style="font-size: 1.4rem; max-width: 800px; margin: 0 auto;">
-                    Como centralizar a base de conhecimento de todos os departamentos e responder dúvidas de forma precisa usando RAG.
+                    Como centralizar a base de conhecimento de todos os departamentos e responder dúvidas de forma
+                    precisa usando RAG.
                 </p>
                 <div style="margin-top: 20px;">
-                    <span class="badge" style="background: var(--primary-glow); border: 1px solid var(--primary); padding: 8px 16px; font-size: 0.85rem; border-radius: 20px;">Proposta de Solução & Arquitetura</span>
+                    <span class="badge"
+                        style="background: var(--primary-glow); border: 1px solid var(--primary); padding: 8px 16px; font-size: 0.85rem; border-radius: 20px;">Proposta
+                        de Solução & Arquitetura</span>
                 </div>
             </div>
             <div class="slide-footer">
@@ -438,23 +459,27 @@
             </div>
             <div class="slide-body">
                 <h2 class="slide-title">O Desafio da <span>Informação Corporativa</span></h2>
-                <p class="slide-subtitle">Como garantir respostas rápidas, precisas e confiáveis para nossos colaboradores?</p>
-                
+                <p class="slide-subtitle">Como garantir respostas rápidas, precisas e confiáveis para nossos
+                    colaboradores?</p>
+
                 <div class="card-row" style="margin-top: 10px;">
                     <div class="info-card">
                         <i data-lucide="help-circle" class="info-card-icon"></i>
                         <h3 class="info-card-title">Dúvidas Repetitivas</h3>
-                        <p class="info-card-text">Setores como RH, TI e Compras gastam horas diárias respondendo perguntas recorrentes dos colaboradores sobre férias, VPN e reembolsos.</p>
+                        <p class="info-card-text">Setores como RH, TI e Compras gastam horas diárias respondendo
+                            perguntas recorrentes dos colaboradores sobre férias, VPN e reembolsos.</p>
                     </div>
                     <div class="info-card">
                         <i data-lucide="lock" class="info-card-icon" style="color: var(--danger)"></i>
                         <h3 class="info-card-title">Segurança e LGPD</h3>
-                        <p class="info-card-text">Documentos confidenciais (financeiros, salários) não podem vazar para departamentos sem autorização. Segurança é indispensável.</p>
+                        <p class="info-card-text">Documentos confidenciais (financeiros, salários) não podem vazar para
+                            departamentos sem autorização. Segurança é indispensável.</p>
                     </div>
                     <div class="info-card">
                         <i data-lucide="database-backup" class="info-card-icon" style="color: var(--warning)"></i>
                         <h3 class="info-card-title">Dados Fragmentados</h3>
-                        <p class="info-card-text">As informações estão espalhadas em PDFs, e-mails, SharePoint, Notion e planilhas, dificultando a busca manual rápida.</p>
+                        <p class="info-card-text">As informações estão espalhadas em PDFs, e-mails, SharePoint, Notion e
+                            planilhas, dificultando a busca manual rápida.</p>
                     </div>
                 </div>
             </div>
@@ -474,20 +499,24 @@
                 <div class="slide-grid">
                     <div>
                         <h2 class="slide-title" style="font-size: 2.2rem;">Por que usar o método <span>RAG</span>?</h2>
-                        <p class="slide-subtitle" style="font-size: 1rem;">Retrieval-Augmented Generation vs. Treinamento Tradicional</p>
-                        
+                        <p class="slide-subtitle" style="font-size: 1rem;">Retrieval-Augmented Generation vs.
+                            Treinamento Tradicional</p>
+
                         <ul class="bullet-list" style="margin-top: 15px;">
                             <li class="bullet-item">
                                 <i data-lucide="check-circle-2"></i>
-                                <span><strong>Sem Alucinações:</strong> A IA só responde utilizando trechos literais dos documentos cadastrados, citando a fonte.</span>
+                                <span><strong>Sem Alucinações:</strong> A IA só responde utilizando trechos literais dos
+                                    documentos cadastrados, citando a fonte.</span>
                             </li>
                             <li class="bullet-item">
                                 <i data-lucide="check-circle-2"></i>
-                                <span><strong>Atualização Dinâmica:</strong> Alterou uma regra de RH? Basta atualizar o documento correspondente e a IA já responde com a nova regra na hora.</span>
+                                <span><strong>Atualização Dinâmica:</strong> Alterou uma regra de RH? Basta atualizar o
+                                    documento correspondente e a IA já responde com a nova regra na hora.</span>
                             </li>
                             <li class="bullet-item">
                                 <i data-lucide="check-circle-2"></i>
-                                <span><strong>Baixo Custo:</strong> Evita o gasto milionário de treinar modelos de IA do zero ou fazer ajustes finos (fine-tuning) frequentes.</span>
+                                <span><strong>Baixo Custo:</strong> Evita o gasto milionário de treinar modelos de IA do
+                                    zero ou fazer ajustes finos (fine-tuning) frequentes.</span>
                             </li>
                         </ul>
                     </div>
@@ -513,7 +542,8 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Controle Acesso</strong></td>
-                                    <td style="color: var(--success); font-weight: 600;">Simples (Filtro em Tempo Real)</td>
+                                    <td style="color: var(--success); font-weight: 600;">Simples (Filtro em Tempo Real)
+                                    </td>
                                     <td style="color: var(--danger);">Impossível de garantir</td>
                                 </tr>
                             </tbody>
@@ -535,8 +565,9 @@
             </div>
             <div class="slide-body">
                 <h2 class="slide-title">Fluxo de Processamento da <span>Informação</span></h2>
-                <p class="slide-subtitle">Como os dados da empresa saem do SharePoint/PDF e chegam como resposta no chat</p>
-                
+                <p class="slide-subtitle">Como os dados da empresa saem do SharePoint/PDF e chegam como resposta no chat
+                </p>
+
                 <div class="flow-container">
                     <div class="flow-step">
                         <div class="flow-step-icon"><i data-lucide="file-text"></i></div>
@@ -583,30 +614,41 @@
             </div>
             <div class="slide-body">
                 <h2 class="slide-title">Segurança de Dados e <span>Controle de Acessos</span></h2>
-                <p class="slide-subtitle">Garantindo a confidencialidade das informações por departamento (RBAC)</p>
-                
+                <p class="slide-subtitle">Garantindo a confidencialidade das informações por departamento (RBAC ou
+                    Controle de Acesso por Função)</p>
+
                 <div class="slide-grid">
                     <div>
                         <ul class="bullet-list">
                             <li class="bullet-item">
                                 <i data-lucide="shield-alert" style="color: var(--danger)"></i>
-                                <span><strong>Filtros por Metadados:</strong> Cada trecho de documento indexado recebe tags de departamento (RH, Financeiro, TI) e nível de segurança (Público, Interno, Confidencial).</span>
+                                <span><strong>Filtros por Metadados:</strong> Cada trecho de documento indexado recebe
+                                    tags de departamento (RH, Financeiro, TI) e nível de segurança (Público, Interno,
+                                    Confidencial).</span>
                             </li>
                             <li class="bullet-item">
                                 <i data-lucide="key-round"></i>
-                                <span><strong>Integração com SSO / Contas Corporativas:</strong> O sistema identifica quem fez a pergunta (ex: Lucas, de Vendas) e filtra os resultados do banco vetorial antes do envio para o modelo de linguagem (LLM).</span>
+                                <span><strong>Integração com SSO / Contas Corporativas:</strong> O sistema identifica
+                                    quem fez a pergunta (ex: Lucas, de Vendas) e filtra os resultados do banco vetorial
+                                    antes do envio para o modelo de linguagem (LLM).</span>
                             </li>
                             <li class="bullet-item">
                                 <i data-lucide="check-square" style="color: var(--success)"></i>
-                                <span><strong>Conformidade com a LGPD:</strong> Dados sensíveis e salários são restritos apenas às pessoas autorizadas do RH Administrativo e Diretoria.</span>
+                                <span><strong>Conformidade com a LGPD:</strong> Dados sensíveis e salários são restritos
+                                    apenas às pessoas autorizadas do RH Administrativo e Diretoria.</span>
                             </li>
                         </ul>
                     </div>
-                    <div style="background: rgba(239, 68, 68, 0.03); border: 1px dashed rgba(239, 68, 68, 0.2); padding: 30px; border-radius: 14px; text-align: center;">
-                        <i data-lucide="user-x" style="width: 50px; height: 50px; color: var(--danger); margin-bottom: 15px;"></i>
-                        <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; margin-bottom: 8px;">Tentativa de Acesso Negada</h4>
+                    <div
+                        style="background: rgba(239, 68, 68, 0.03); border: 1px dashed rgba(239, 68, 68, 0.2); padding: 30px; border-radius: 14px; text-align: center;">
+                        <i data-lucide="user-x"
+                            style="width: 50px; height: 50px; color: var(--danger); margin-bottom: 15px;"></i>
+                        <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; margin-bottom: 8px;">Tentativa
+                            de Acesso Negada</h4>
                         <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-                            Se um colaborador comum perguntar sobre a <em>"Tabela de salários de Diretores"</em>, o filtro RBAC bloqueia a leitura do arquivo no banco vetorial. O prompt gerado para o LLM não conterá a informação, e a IA responderá informando a negação de acesso.
+                            Se um colaborador comum perguntar sobre a <em>"Tabela de salários de Diretores"</em>, o
+                            filtro RBAC bloqueia a leitura do arquivo no banco vetorial. O prompt gerado para o LLM não
+                            conterá a informação, e a IA responderá informando a negação de acesso.
                         </p>
                     </div>
                 </div>
@@ -620,40 +662,101 @@
         <!-- Slide 6: O Protótipo -->
         <div class="slide" id="slide-6">
             <div class="slide-header">
-                <span class="slide-tag">05. Demonstração</span>
+                <span class="slide-tag">05. Ferramentas</span>
                 <div class="slide-logo"><i data-lucide="bot"></i> Enterprise<span>RAG</span></div>
             </div>
             <div class="slide-body">
-                <div class="slide-grid">
-                    <div>
-                        <h2 class="slide-title">Demonstração do <span>Conceito</span></h2>
-                        <p class="slide-subtitle">Desenvolvemos um protótipo funcional para testes imediatos</p>
-                        
-                        <ul class="bullet-list" style="margin-top: 15px;">
-                            <li class="bullet-item">
-                                <i data-lucide="arrow-right-circle"></i>
-                                <span>Mecanismo de RAG simulado que roda inteiramente no navegador.</span>
+                <h2 class="slide-title">Ferramentas <span>Recomendadas</span></h2>
+                <p class="slide-subtitle" style="margin-bottom: 18px;">Stack completa para implementar um RAG
+                    corporativo de produção</p>
+
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+
+                    <!-- LLMs -->
+                    <div
+                        style="background: rgba(95,63,233,0.07); border: 1px solid rgba(95,63,233,0.25); border-radius: 14px; padding: 18px 14px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                            <i data-lucide="brain-circuit"
+                                style="width:20px;height:20px;color:var(--primary);flex-shrink:0;"></i>
+                            <strong
+                                style="font-family:'Outfit',sans-serif; font-size:0.85rem; color:var(--primary);">LLMs</strong>
+                        </div>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:7px;">
+                            <li style="font-size:0.78rem; color:var(--text-main);">🟢 <strong>GPT-4o</strong> — OpenAI
                             </li>
-                            <li class="bullet-item">
-                                <i data-lucide="arrow-right-circle"></i>
-                                <span>Permite simular perguntas sob o ponto de vista de diferentes perfis e cargos.</span>
-                            </li>
-                            <li class="bullet-item">
-                                <i data-lucide="arrow-right-circle"></i>
-                                <span>Cadastre e delete novos arquivos de texto no painel administrativo de forma dinâmica.</span>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🔵 <strong>Claude 3.5</strong> —
+                                Anthropic</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🟣 <strong>Gemini 1.5</strong> —
+                                Google</li>
+                            <li style="font-size:0.78rem; color:var(--text-muted);">🟡 <strong>Llama 3</strong> — Meta
+                                (open)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Bancos Vetoriais -->
+                    <div
+                        style="background: rgba(0,229,255,0.05); border: 1px solid rgba(0,229,255,0.2); border-radius: 14px; padding: 18px 14px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                            <i data-lucide="database-zap"
+                                style="width:20px;height:20px;color:var(--secondary);flex-shrink:0;"></i>
+                            <strong
+                                style="font-family:'Outfit',sans-serif; font-size:0.85rem; color:var(--secondary);">Banco
+                                Vetorial</strong>
+                        </div>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:7px;">
+                            <li style="font-size:0.78rem; color:var(--text-main);">⚡ <strong>Pinecone</strong> — cloud
+                                nativo</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🐘 <strong>pgvector</strong> —
+                                PostgreSQL</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🔷 <strong>Weaviate</strong> — open
+                                source</li>
+                            <li style="font-size:0.78rem; color:var(--text-muted);">🟠 <strong>Chroma</strong> —
+                                local/dev</li>
+                        </ul>
+                    </div>
+
+                    <!-- Orquestração -->
+                    <div
+                        style="background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.2); border-radius: 14px; padding: 18px 14px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                            <i data-lucide="workflow"
+                                style="width:20px;height:20px;color:var(--success);flex-shrink:0;"></i>
+                            <strong
+                                style="font-family:'Outfit',sans-serif; font-size:0.85rem; color:var(--success);">Orquestração</strong>
+                        </div>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:7px;">
+                            <li style="font-size:0.78rem; color:var(--text-main);">🦜 <strong>LangChain</strong> —
+                                pipelines</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🦙 <strong>LlamaIndex</strong> —
+                                indexação</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🌊 <strong>Haystack</strong> —
+                                enterprise</li>
+                            <li style="font-size:0.78rem; color:var(--text-muted);">🤖 <strong>AutoGen</strong> —
+                                multi-agentes</li>
+                        </ul>
+                    </div>
+
+                    <!-- Embeddings -->
+                    <div
+                        style="background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.2); border-radius: 14px; padding: 18px 14px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                            <i data-lucide="sparkles"
+                                style="width:20px;height:20px;color:var(--warning);flex-shrink:0;"></i>
+                            <strong
+                                style="font-family:'Outfit',sans-serif; font-size:0.85rem; color:var(--warning);">Embeddings</strong>
+                        </div>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:7px;">
+                            <li style="font-size:0.78rem; color:var(--text-main);">🔵 <strong>text-embedding-3</strong>
+                                — OpenAI</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🟣 <strong>Gecko</strong> — Google
+                                Vertex</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🤗 <strong>BGE-M3</strong> —
+                                HuggingFace</li>
+                            <li style="font-size:0.78rem; color:var(--text-muted);">🟢 <strong>Cohere Embed 3</strong>
                             </li>
                         </ul>
                     </div>
-                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); padding: 30px; border-radius: 14px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px;">
-                        <i data-lucide="monitor-play" style="width: 60px; height: 60px; color: var(--secondary);"></i>
-                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.15rem;">Simulador RAG Corporativo</h3>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">
-                            Veja a IA respondendo dúvidas de RH e TI em tempo real, acompanhado de um inspetor técnico que desvenda cada etapa do pipeline.
-                        </p>
-                        <a href="index.html" class="btn-simulator" target="_blank" style="margin-top: 10px;">
-                            <i data-lucide="external-link"></i> Abrir Protótipo
-                        </a>
-                    </div>
+
                 </div>
             </div>
             <div class="slide-footer">
@@ -671,22 +774,28 @@
             <div class="slide-body">
                 <h2 class="slide-title">Roteiro de <span>Implantação</span> Sugerido</h2>
                 <p class="slide-subtitle">Fases propostas para tirar a ideia do papel e levar para produção</p>
-                
+
                 <div class="card-row" style="margin-top: 10px;">
                     <div class="info-card">
-                        <span style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--secondary)">01</span>
+                        <span
+                            style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--secondary)">01</span>
                         <h3 class="info-card-title">Mínimo Produto Viável (MVP)</h3>
-                        <p class="info-card-text">Duração: 4 semanas. Foco exclusivo no departamento de RH com piloto de até 15 documentos. Criação do canal básico via chat web.</p>
+                        <p class="info-card-text">Duração: 4 semanas. Foco exclusivo no departamento de RH com piloto de
+                            até 15 documentos. Criação do canal básico via chat web.</p>
                     </div>
                     <div class="info-card" style="border-color: rgba(95, 63, 233, 0.3)">
-                        <span style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--primary-light)">02</span>
+                        <span
+                            style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--primary-light)">02</span>
                         <h3 class="info-card-title">Integração e Segurança</h3>
-                        <p class="info-card-text">Duração: 6 semanas. Implementação de login SSO, regras restritas por cargo (RBAC), e sincronização com SharePoint/Google Drive da empresa.</p>
+                        <p class="info-card-text">Duração: 6 semanas. Implementação de login SSO, regras restritas por
+                            cargo (RBAC), e sincronização com SharePoint/Google Drive da empresa.</p>
                     </div>
                     <div class="info-card">
-                        <span style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--success)">03</span>
+                        <span
+                            style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--success)">03</span>
                         <h3 class="info-card-title">Integração e Lançamento</h3>
-                        <p class="info-card-text">Duração: 4 semanas. Lançamento da IA dentro dos canais de comunicação existentes da empresa (como Slack ou Microsoft Teams).</p>
+                        <p class="info-card-text">Duração: 4 semanas. Lançamento da IA dentro dos canais de comunicação
+                            existentes da empresa (como Slack ou Microsoft Teams).</p>
                     </div>
                 </div>
             </div>
@@ -736,7 +845,7 @@
             // Update buttons
             btnPrev.disabled = currentSlide === 0;
             btnNext.disabled = currentSlide === slides.length - 1;
-            
+
             // Update indicator
             slideNum.textContent = `Slide ${currentSlide + 1} / ${slides.length}`;
         }
@@ -774,4 +883,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>
