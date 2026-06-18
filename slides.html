@@ -665,29 +665,71 @@
         <!-- Slide 7: Roteiro de Implantação -->
         <div class="slide" id="slide-7">
             <div class="slide-header">
-                <span class="slide-tag">06. Próximos Passos</span>
+                <span class="slide-tag">06. Ferramentas</span>
                 <div class="slide-logo"><i data-lucide="bot"></i> Enterprise<span>RAG</span></div>
             </div>
             <div class="slide-body">
-                <h2 class="slide-title">Roteiro de <span>Implantação</span> Sugerido</h2>
-                <p class="slide-subtitle">Fases propostas para tirar a ideia do papel e levar para produção</p>
-                
-                <div class="card-row" style="margin-top: 10px;">
-                    <div class="info-card">
-                        <span style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--secondary)">01</span>
-                        <h3 class="info-card-title">Mínimo Produto Viável (MVP)</h3>
-                        <p class="info-card-text">Duração: 4 semanas. Foco exclusivo no departamento de RH com piloto de até 15 documentos. Criação do canal básico via chat web.</p>
+                <h2 class="slide-title">Ferramentas <span>Recomendadas</span></h2>
+                <p class="slide-subtitle" style="margin-bottom: 18px;">Stack completa para implementar um RAG corporativo de produção</p>
+
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+
+                    <!-- LLMs -->
+                    <div style="background: rgba(95,63,233,0.07); border: 1px solid rgba(95,63,233,0.25); border-radius: 14px; padding: 18px 14px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                            <i data-lucide="brain-circuit" style="width:20px;height:20px;color:var(--primary);flex-shrink:0;"></i>
+                            <strong style="font-family:'Outfit',sans-serif; font-size:0.85rem; color:var(--primary);">LLMs</strong>
+                        </div>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:7px;">
+                            <li style="font-size:0.78rem; color:var(--text-main);">🟢 <strong>GPT-4o</strong> — OpenAI</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🔵 <strong>Claude 3.5</strong> — Anthropic</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🟣 <strong>Gemini 1.5</strong> — Google</li>
+                            <li style="font-size:0.78rem; color:var(--text-muted);">🟡 <strong>Llama 3</strong> — Meta (open)</li>
+                        </ul>
                     </div>
-                    <div class="info-card" style="border-color: rgba(95, 63, 233, 0.3)">
-                        <span style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--primary-light)">02</span>
-                        <h3 class="info-card-title">Integração e Segurança</h3>
-                        <p class="info-card-text">Duração: 6 semanas. Implementação de login SSO, regras restritas por cargo (RBAC), e sincronização com SharePoint/Google Drive da empresa.</p>
+
+                    <!-- Bancos Vetoriais -->
+                    <div style="background: rgba(0,229,255,0.05); border: 1px solid rgba(0,229,255,0.2); border-radius: 14px; padding: 18px 14px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                            <i data-lucide="database-zap" style="width:20px;height:20px;color:var(--secondary);flex-shrink:0;"></i>
+                            <strong style="font-family:'Outfit',sans-serif; font-size:0.85rem; color:var(--secondary);">Banco Vetorial</strong>
+                        </div>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:7px;">
+                            <li style="font-size:0.78rem; color:var(--text-main);">⚡ <strong>Pinecone</strong> — cloud nativo</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🐘 <strong>pgvector</strong> — PostgreSQL</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🔷 <strong>Weaviate</strong> — open source</li>
+                            <li style="font-size:0.78rem; color:var(--text-muted);">🟠 <strong>Chroma</strong> — local/dev</li>
+                        </ul>
                     </div>
-                    <div class="info-card">
-                        <span style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--success)">03</span>
-                        <h3 class="info-card-title">Integração e Lançamento</h3>
-                        <p class="info-card-text">Duração: 4 semanas. Lançamento da IA dentro dos canais de comunicação existentes da empresa (como Slack ou Microsoft Teams).</p>
+
+                    <!-- Orquestração -->
+                    <div style="background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.2); border-radius: 14px; padding: 18px 14px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                            <i data-lucide="workflow" style="width:20px;height:20px;color:var(--success);flex-shrink:0;"></i>
+                            <strong style="font-family:'Outfit',sans-serif; font-size:0.85rem; color:var(--success);">Orquestração</strong>
+                        </div>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:7px;">
+                            <li style="font-size:0.78rem; color:var(--text-main);">🦜 <strong>LangChain</strong> — pipelines</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🦙 <strong>LlamaIndex</strong> — indexação</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🌊 <strong>Haystack</strong> — enterprise</li>
+                            <li style="font-size:0.78rem; color:var(--text-muted);">🤖 <strong>AutoGen</strong> — multi-agentes</li>
+                        </ul>
                     </div>
+
+                    <!-- Embeddings -->
+                    <div style="background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.2); border-radius: 14px; padding: 18px 14px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                            <i data-lucide="sparkles" style="width:20px;height:20px;color:var(--warning);flex-shrink:0;"></i>
+                            <strong style="font-family:'Outfit',sans-serif; font-size:0.85rem; color:var(--warning);">Embeddings</strong>
+                        </div>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:7px;">
+                            <li style="font-size:0.78rem; color:var(--text-main);">🔵 <strong>text-embedding-3</strong> — OpenAI</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🟣 <strong>Gecko</strong> — Google Vertex</li>
+                            <li style="font-size:0.78rem; color:var(--text-main);">🤗 <strong>BGE-M3</strong> — HuggingFace</li>
+                            <li style="font-size:0.78rem; color:var(--text-muted);">🟢 <strong>Cohere Embed 3</strong></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
             <div class="slide-footer">
