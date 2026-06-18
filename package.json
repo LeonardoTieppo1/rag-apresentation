@@ -1,0 +1,17 @@
+{
+  "name": "enterprise-rag-simulator",
+  "version": "1.0.0",
+  "description": "Simulador de RAG Corporativo com Controle de Acesso e Inspetor de Pipeline",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y http-server -p 3000"
+  },
+  "keywords": [
+    "rag",
+    "ai",
+    "simulator",
+    "enterprise"
+  ],
+  "author": "Antigravity",
+  "license": "ISC"
+}

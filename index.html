@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise RAG Simulator - Antigravity</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (loaded via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-logo">
+                <div class="logo-icon">
+                    <i data-lucide="bot"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Enterprise<span>RAG</span></h1>
+                    <span class="logo-subtitle">Simulador de IA Corporativa</span>
+                </div>
+            </div>
+            <div class="header-stats">
+                <div class="stat-badge">
+                    <i data-lucide="files" class="text-primary"></i>
+                    <span>Documentos: <strong id="stat-docs-count">0</strong></span>
+                </div>
+                <div class="stat-badge">
+                    <i data-lucide="message-square" class="text-secondary"></i>
+                    <span>Perguntas: <strong id="stat-queries-count">0</strong></span>
+                </div>
+                <div class="stat-badge danger">
+                    <i data-lucide="shield-alert" class="text-danger"></i>
+                    <span>Bloqueados (LGPD/Segurança): <strong id="stat-blocked-count">0</strong></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <div class="app-workspace">
+            
+            <!-- Left Sidebar: Controls & Docs -->
+            <aside class="workspace-sidebar">
+                
+                <!-- Section 1: User Profile Simulator -->
+                <div class="sidebar-section">
+                    <div class="section-title">
+                        <i data-lucide="user-check"></i>
+                        <h2>Simular Usuário (Perfil/Cargo)</h2>
+                    </div>
+                    <p class="section-desc">Mude o usuário para ver o RAG barrando ou permitindo acesso às respostas com base nas políticas da empresa.</p>
+                    
+                    <div class="user-selector">
+                        <label class="user-option active" data-role="employee_sales">
+                            <input type="radio" name="user-role" value="employee_sales" checked>
+                            <div class="user-option-content">
+                                <span class="user-name">Lucas Silva</span>
+                                <span class="user-title">Analista de Vendas</span>
+                                <span class="badge badge-public">Acesso Público</span>
+                            </div>
+                        </label>
+                        
+                        <label class="user-option" data-role="hr_manager">
+                            <input type="radio" name="user-role" value="hr_manager">
+                            <div class="user-option-content">
+                                <span class="user-name">Carla Souza</span>
+                                <span class="user-title">Gerente de RH</span>
+                                <span class="badge badge-hr">Acesso RH</span>
+                            </div>
+                        </label>
+                        
+                        <label class="user-option" data-role="director">
+                            <input type="radio" name="user-role" value="director">
+                            <div class="user-option-content">
+                                <span class="user-name">Dr. Roberto Lima</span>
+                                <span class="user-title">Diretor Financeiro (C-Level)</span>
+                                <span class="badge badge-confidential">Acesso Confidencial</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Section 2: Document Store -->
+                <div class="sidebar-section docs-section">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <i data-lucide="database"></i>
+                            <h2>Base de Conhecimento (Docs)</h2>
+                        </div>
+                        <button class="btn-icon-primary" id="btn-add-doc" title="Adicionar Documento">
+                            <i data-lucide="plus"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="doc-search-box">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="doc-search" placeholder="Filtrar documentos...">
+                    </div>
+
+                    <div class="docs-list" id="docs-container">
+                        <!-- Dynamic Docs List -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center/Right Area: Chat & Inspector -->
+            <main class="workspace-content">
+                
+                <!-- Chat Panel -->
+                <section class="panel chat-panel">
+                    <div class="panel-header">
+                        <div class="panel-header-title">
+                            <i data-lucide="message-circle" class="text-primary"></i>
+                            <span>Canal de Atendimento de IA</span>
+                        </div>
+                        <div class="chat-status">
+                            <span class="status-indicator online"></span>
+                            <span>IA Online (Gemini 1.5 Flash)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chat-messages-container">
+                        <!-- Welcome message -->
+                        <div class="message system-message">
+                            <div class="message-content">
+                                <p><strong>Bem-vindo ao canal de atendimento inteligente!</strong> Como posso ajudar você hoje com as políticas da empresa? Mude o perfil na barra lateral para simular acessos diferentes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-presets">
+                        <span class="presets-label">Sugestões de perguntas:</span>
+                        <div class="presets-container" id="presets-container">
+                            <!-- Presets loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <form id="chat-form">
+                            <input type="text" id="chat-input" placeholder="Pergunte algo (ex: 'Quando posso tirar férias?' ou 'Qual o limite de reembolso?')..." autocomplete="off">
+                            <button type="submit" class="btn-send" id="btn-send-message">
+                                <span>Perguntar</span>
+                                <i data-lucide="send"></i>
+                            </button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- RAG Inspector Panel (Under the Hood) -->
+                <section class="panel inspector-panel">
+                    <div class="panel-header">
+                        <div class="panel-header-title">
+                            <i data-lucide="cpu" class="text-secondary"></i>
+                            <span>Inspetor de Processo RAG (Por Trás das Câmeras)</span>
+                        </div>
+                        <button class="btn-clear-inspector" id="btn-clear-inspector" title="Limpar Inspeção">
+                            <i data-lucide="trash-2"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="inspector-content" id="inspector-steps-container">
+                        <!-- Default empty state -->
+                        <div class="inspector-empty-state" id="inspector-empty">
+                            <i data-lucide="activity"></i>
+                            <h3>Aguardando Pergunta...</h3>
+                            <p>Envie uma pergunta no chat para visualizar o processamento do RAG passo a passo, incluindo a vetorização, busca semântica, controle de acessos e a construção do prompt final.</p>
+                        </div>
+
+                        <!-- Step 1: Question Input (Hidden initially) -->
+                        <div class="step-card" id="step-1" style="display: none;">
+                            <div class="step-header">
+                                <span class="step-number">1</span>
+                                <h4>Recebendo Pergunta & Vetorização</h4>
+                                <span class="step-badge">NLP Input</span>
+                            </div>
+                            <div class="step-body">
+                                <p class="step-text">A pergunta do usuário foi convertida em um vetor numérico (Embedding) para busca semântica.</p>
+                                <div class="vector-preview">
+                                    <strong>Vetor da Pergunta (Simulado):</strong>
+                                    <span class="vector-array" id="step1-vector">[...]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Retrieval & Security Filters (Hidden initially) -->
+                        <div class="step-card" id="step-2" style="display: none;">
+                            <div class="step-header">
+                                <span class="step-number">2</span>
+                                <h4>Busca Vetorial & Filtro de Permissões (RBAC)</h4>
+                                <span class="step-badge">Vector DB</span>
+                            </div>
+                            <div class="step-body">
+                                <p class="step-text">Buscando documentos semelhantes no banco vetorial. Aplicando regras de acesso baseadas no perfil do usuário ativo.</p>
+                                <div class="retrieval-results" id="step2-results">
+                                    <!-- Dynamic list of evaluated documents -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Prompt Construction (Hidden initially) -->
+                        <div class="step-card" id="step-3" style="display: none;">
+                            <div class="step-header">
+                                <span class="step-number">3</span>
+                                <h4>Montagem do Prompt do Contexto</h4>
+                                <span class="step-badge">Prompt Eng</span>
+                            </div>
+                            <div class="step-body">
+                                <p class="step-text">Os documentos autorizados foram acoplados à pergunta no prompt final enviado ao LLM.</p>
+                                <pre class="prompt-preview"><code id="step3-prompt-content">...</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Generation (Hidden initially) -->
+                        <div class="step-card" id="step-4" style="display: none;">
+                            <div class="step-header">
+                                <span class="step-number">4</span>
+                                <h4>Geração de Resposta da IA</h4>
+                                <span class="step-badge">LLM Output</span>
+                            </div>
+                            <div class="step-body">
+                                <p class="step-text">O LLM lê apenas o contexto fornecido e responde com precisão, citando as fontes.</p>
+                                <div class="llm-response-preview" id="step4-llm-response">
+                                    ...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Add Document Modal -->
+        <div class="modal" id="add-doc-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Adicionar Documento à Base de Conhecimento</h2>
+                    <button class="modal-close" id="modal-close-btn">&times;</button>
+                </div>
+                <form id="add-doc-form">
+                    <div class="form-group">
+                        <label for="doc-title">Título do Documento</label>
+                        <input type="text" id="doc-title" required placeholder="Ex: Política de Home Office 2026">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="doc-dept">Departamento</label>
+                            <select id="doc-dept" required>
+                                <option value="RH">Recursos Humanos (RH)</option>
+                                <option value="TI">Tecnologia (TI)</option>
+                                <option value="Financeiro">Financeiro</option>
+                                <option value="Vendas">Vendas / Comercial</option>
+                                <option value="Geral">Geral (Todos)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="doc-access">Nível de Acesso (Segurança)</label>
+                            <select id="doc-access" required>
+                                <option value="Public">Público (Todos os Colaboradores)</option>
+                                <option value="HR Only">Restrito ao RH</option>
+                                <option value="Confidential">Confidencial (Diretoria C-Level)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="doc-content">Conteúdo do Documento (Instruções detalhadas)</label>
+                        <textarea id="doc-content" rows="6" required placeholder="Escreva aqui as regras corporativas detalhadamente. Ex: O reembolso de almoço é de R$ 50 para colaboradores externos. O reembolso de táxi exige nota fiscal..."></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-cancel" id="btn-cancel-doc">Cancelar</button>
+                        <button type="submit" class="btn-submit">Indexar Documento (RAG)</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script src="app.js"></script>
+</body>
+</html>
